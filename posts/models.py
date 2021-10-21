@@ -6,4 +6,13 @@ class Post(models.Model):
     url=models.URLField()
     poster=models.ForeignKey(User,on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering=['-created']
+
+class Vote(models.Model):
+    voter=models.ForeignKey(User,on_delete=models.CASCADE)
+    post=models.ForeignKey(Post,on_delete=models.CASCADE)
+
+
 # Create your models here.
