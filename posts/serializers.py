@@ -3,6 +3,7 @@ from .models import Post
 
 
 class PostSerializers(serializers.ModelSerializer):
+    poster=serializers.ReadOnlyField()
     class Meta:
         model = Post
         fields=['id','title','url','poster','created']
