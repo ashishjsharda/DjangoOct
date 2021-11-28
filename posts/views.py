@@ -6,3 +6,6 @@ from .serializers import PostSerializers
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializers
+
+    def perform_create(self,serializer):
+        serializer.save(poster=self.request.user)
