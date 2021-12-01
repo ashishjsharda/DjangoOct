@@ -9,3 +9,5 @@ class PostSerializers(serializers.ModelSerializer):
         model = Post
         fields=['id','title','url','poster','poster_id','created']
 
+
+class VoteSerializers(serializers.ModelSerializer):
